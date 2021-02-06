@@ -16,4 +16,17 @@ export interface Games {
 export class SharedDataService {
 
   constructor() { }
+
+  //mockup some data
+  fetchQuizzes(): Opponents[] {
+
+    return [
+      {
+        name: 'Sherman'
+      },
+      {
+        name: 'Tina'
+      }
+    ];
+  }
 }
