@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedDataService } from './shared-data.service';
 import { Opponents } from './shared-data.service';
 
@@ -12,9 +12,13 @@ export class AppComponent {
 
   opponents: Opponents[] = [];
 
-  constructor(private sharedDataSvc: SharedDataService) {
+  name = "";
 
-    // Get opponents
-    this.opponents = this.sharedDataSvc.fetchQuizzes();
+  constructor(public sharedDataSvc: SharedDataService) {}
+
+  ngOnInit() {
+    this.opponents = this.sharedDataSvc.getOpponents();
+
+    this.sharedDataSvc.updateOpponentList(this.name);
   }
 }

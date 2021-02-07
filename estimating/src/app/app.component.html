@@ -4,5 +4,27 @@
   <!-- <input type="checkbox">
   <label for="horns">{{ opponent.name }}</label> -->
 
-    <button>{{ opponent.name }}</button>
+    <button
+    >
+      {{ opponent.name }}
+    
+    </button>
+
+</div>
+
+<br><br>
+
+<div>
+  <!-- Get the name from the input -->
+  <input 
+      type="text"
+      [(ngModel)]="value"
+    >
+  <!-- wants service to be public -->
+    <button
+      (click)="sharedDataSvc.updateOpponentList(value)"
+    >
+      <!-- need to add method call to updateOpponentList(), use (click)  -->
+      Add Opponent
+    </button>
 </div>

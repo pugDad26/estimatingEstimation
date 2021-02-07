@@ -15,18 +15,42 @@ export interface Games {
 })
 export class SharedDataService {
 
+  checkersOpponents: Opponents[] = [];
+
   constructor() { }
 
   //mockup some data
-  fetchQuizzes(): Opponents[] {
+  getOpponents(): Opponents[] {
 
-    return [
+    this.checkersOpponents = [
       {
         name: 'Sherman'
       },
       {
         name: 'Tina'
       }
+    ];
+
+    return this.checkersOpponents
+  }
+
+  updateOpponentList = (opponentToAdd: string) => {
+
+    // this.checkersOpponents.push(opponentToAdd);
+    // // // //const updatedList = opponents.map(x => ({
+    // // //     ...x,
+    // // //     opponentToAdd //was adding the object as a property to the existing objects
+    // //        couldn't get to work
+    // // }));
+    // return this.checkersOpponents
+
+    const newOpponent = {
+      name: opponentToAdd
+    };
+
+    this.checkersOpponents = [
+      ...this.checkersOpponents,
+      newOpponent
     ];
   }
 }
