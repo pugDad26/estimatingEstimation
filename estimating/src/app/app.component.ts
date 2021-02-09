@@ -14,11 +14,42 @@ export class AppComponent {
 
   name = "";
 
-  constructor(public sharedDataSvc: SharedDataService) {}
+  constructor(private sharedDataSvc: SharedDataService) {}
 
   ngOnInit() {
-    this.opponents = this.sharedDataSvc.getOpponents();
+    this.opponents = this.getOpponents();
+  }
 
-    this.sharedDataSvc.updateOpponentList(this.name);
+  //mockup some data
+  getOpponents(): Opponents[] {
+
+    this.opponents = [
+      {
+        name: 'Sherman'
+      },
+      {
+        name: 'Tina'
+      }
+    ];
+  
+    return this.opponents
+  }
+
+  addOpponent = (opponentToAdd: string) => {
+
+    console.log(opponentToAdd);
+
+    const newOpponent = {
+      name: opponentToAdd
+    };
+
+    this.opponents = [
+      ...this.opponents,
+      newOpponent
+    ];
+
+    console.log("Method Executed Successfully!!!");
+
+    this.getOpponents;
   }
 }

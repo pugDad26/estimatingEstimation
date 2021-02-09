@@ -1,14 +1,15 @@
 <div 
   *ngFor="let opponent of opponents"
 >
-  <!-- <input type="checkbox">
-  <label for="horns">{{ opponent.name }}</label> -->
+  <input type="checkbox">
+  <label>{{ opponent.name }}</label>
 
-    <button
+    <!-- NEED TO FIND SOLUTION TO SEND BUTTON VALUE/NAME ATTRIBUTE WHEN BUTTON CLICKED -->
+    <!-- <button
     >
       {{ opponent.name }}
     
-    </button>
+    </button> -->
 
 </div>
 
@@ -18,13 +19,16 @@
   <!-- Get the name from the input -->
   <input 
       type="text"
-      [(ngModel)]="value"
+      #opponent
     >
-  <!-- wants service to be public -->
+    <!-- SEND THE INPUT TO ADD OPPONENT METHOD AND SET VARIABLE OF NEW OPPONENT TO 
+         USE ON SECOND SCREEN
+     -->
     <button
-      (click)="sharedDataSvc.updateOpponentList(value)"
+      (click)="addOpponent(opponent.value)"
     >
-      <!-- need to add method call to updateOpponentList(), use (click)  -->
       Add Opponent
     </button>
 </div>
+
+<!-- COULD USE [(NGMODEL)] TO GET VALUE OF VARIABLE SET -->
