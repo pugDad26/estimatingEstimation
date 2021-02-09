@@ -36,8 +36,8 @@ export class AppComponent {
   }
 
   addOpponent = (opponentToAdd: string) => {
-
-    console.log(opponentToAdd);
+    //TROUBLESHOOTING
+    //console.log(opponentToAdd);
 
     const newOpponent = {
       name: opponentToAdd
@@ -48,8 +48,10 @@ export class AppComponent {
       newOpponent
     ];
 
-    console.log("Method Executed Successfully!!!");
+    //TROUBLESHOOTING
+    //console.log("Method Executed Successfully!!!");
 
+    //Get reload method to solve this issue
     this.getOpponents;
   }
 }

@@ -1,8 +1,17 @@
 <div 
   *ngFor="let opponent of opponents"
+  class="form-check"
 >
-  <input type="checkbox">
-  <label>{{ opponent.name }}</label>
+  <input 
+    form-check-input
+    type="checkbox"
+  >
+  <label
+    form-check-label
+  >
+    {{ opponent.name }}
+  
+</label>
 
     <!-- NEED TO FIND SOLUTION TO SEND BUTTON VALUE/NAME ATTRIBUTE WHEN BUTTON CLICKED -->
     <!-- <button
@@ -24,11 +33,12 @@
     <!-- SEND THE INPUT TO ADD OPPONENT METHOD AND SET VARIABLE OF NEW OPPONENT TO 
          USE ON SECOND SCREEN
      -->
-    <button
-      (click)="addOpponent(opponent.value)"
-    >
-      Add Opponent
-    </button>
+     <button 
+        mat-raised-button color="primary"
+        (click)="addOpponent(opponent.value)"
+      >
+        Add Opponent
+      </button>
 </div>
 
 <!-- COULD USE [(NGMODEL)] TO GET VALUE OF VARIABLE SET -->
