@@ -31,11 +31,13 @@ export class AppComponent {
         name: 'Tina'
       }
     ];
+
+    console.log(this.opponents);
   
     return this.opponents
   }
 
-  addOpponent = (opponentToAdd: string) => {
+  addOpponent(opponentToAdd: string) {
     //TROUBLESHOOTING
     //console.log(opponentToAdd);
 
@@ -51,7 +53,6 @@ export class AppComponent {
     //TROUBLESHOOTING
     //console.log("Method Executed Successfully!!!");
 
-    //Get reload method to solve this issue
     this.getOpponents;
   }
 }
