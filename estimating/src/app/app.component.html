@@ -1,7 +1,4 @@
-<div
-  class="container"
->
-  <div 
+<div 
   *ngFor="let opponent of opponents"
   class="form-check"
 >
@@ -17,11 +14,11 @@
 </label>
 
     <!-- NEED TO FIND SOLUTION TO SEND BUTTON VALUE/NAME ATTRIBUTE WHEN BUTTON CLICKED -->
-    <!-- <button
+    <button
     >
       {{ opponent.name }}
     
-    </button> -->
+    </button>
 
 </div>
 
@@ -33,16 +30,14 @@
       type="text"
       #opponent
     >
-    <!-- SEND THE INPUT TO ADD OPPONENT METHOD AND SET VARIABLE OF NEW OPPONENT TO 
-         USE ON SECOND SCREEN
-     -->
+     <!-- SEND THE INPUT TO ADD OPPONENT METHOD AND SET VARIABLE OF NEW OPPONENT TO  -->
+         <!-- USE ON SECOND SCREEN -->
      <button 
         mat-raised-button color="primary"
         (click)="addOpponent(opponent.value)"
       >
         Add Opponent
       </button>
-</div>
+</div> 
 
-<!-- COULD USE [(NGMODEL)] TO GET VALUE OF VARIABLE SET -->         
-</div>
+<!-- COULD USE [(NGMODEL)] TO GET VALUE OF VARIABLE SET        -->

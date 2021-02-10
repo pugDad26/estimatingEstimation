@@ -53,6 +53,6 @@ export class AppComponent {
     //TROUBLESHOOTING
     //console.log("Method Executed Successfully!!!");
 
-    this.getOpponents;
+    //this.getOpponents;
   }
 }
