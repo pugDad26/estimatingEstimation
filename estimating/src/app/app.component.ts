@@ -52,10 +52,4 @@ export class AppComponent {
   clearInputText() {
     this.nameInTextInput = ' ';
   }
-
-  //Set variable for opponet player has chosen to play against
-  setOpponentName(opponentName: string) {
-    this.opponentName = opponentName;
-    console.log(this.opponentName);
-  }
 }
