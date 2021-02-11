@@ -12,9 +12,7 @@ export class AppComponent {
 
   opponents: Opponents[] = [];
 
-  opponentName = "";
-
-  addedOpponentName = "";
+  nameInTextInput = "";
 
   constructor(private sharedDataSvc: SharedDataService) {}
 
@@ -39,10 +37,10 @@ export class AppComponent {
     return this.opponents
   }
 
-  addOpponent(opponentToAdd: string) {
+  addOpponent() {
 
     const newOpponent = {
-      name: opponentToAdd
+      name: this.nameInTextInput
     };
 
     this.opponents = [
@@ -52,10 +50,12 @@ export class AppComponent {
   }
 
   clearInputText() {
-    this.addedOpponentName = ' ';
+    this.nameInTextInput = ' ';
   }
 
+  //Set variable for opponet player has chosen to play against
   setOpponentName(opponentName: string) {
     this.opponentName = opponentName;
+    console.log(this.opponentName);
   }
 }

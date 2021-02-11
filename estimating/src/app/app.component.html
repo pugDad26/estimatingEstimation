@@ -1,33 +1,37 @@
-<div class="container">
+<div 
+  class="container"
+>
 <mat-card
   class="card"
 >
-<h2>CHOOSE OPPONENT</h2>
+<h2>
+  CHOOSE OPPONENT
+</h2>
 <div 
   *ngFor="let opponent of opponents"
   class="form-check chooseOpponent"
 >
 
-  <!-- <input 
-    form-check-input
-    type="checkbox"
-  >
-  
-  <label
-    form-check-label
+<input 
+  form-check-input
+  type="checkbox"
+>
+
+<label
+  form-check-label
+>
+  {{ opponent.name }}
+
+</label>
+
+  <!-- NEED TO FIND SOLUTION TO SEND BUTTON VALUE/NAME ATTRIBUTE WHEN BUTTON CLICKED -->
+  <!-- <button
+    mat-raised-button
+    class="opponentNameButton"
   >
     {{ opponent.name }}
   
-</label> -->
-
-    <!-- NEED TO FIND SOLUTION TO SEND BUTTON VALUE/NAME ATTRIBUTE WHEN BUTTON CLICKED -->
-    <button
-      mat-raised-button
-      class="opponentNameButton"
-    >
-      {{ opponent.name }}
-    
-    </button>
+  </button> -->
 
 </div>
 
@@ -36,36 +40,39 @@
 <div
   class="opponentInput"
 >
-  <!-- Get the name from the input -->
-  <!-- <input 
-      type="text"
-      #opponent
-    > -->
-    <mat-form-field>
-      <mat-label>
-          Enter new Opponent
-      </mat-label>
-      <input 
-        matInput placeholder="Ex. Jim Davis" 
-        #opponent
-        [(ngModel)]="addedOpponentName"
-      >
-    </mat-form-field>
-    
-     <button 
-        mat-raised-button color="primary"
-        (click)="addOpponent(opponent.value); clearInputText()"
-        class="newOpponentButton"
-      >
-        Add Opponent
-      </button>
+<!-- Get the name from the input -->
+<!-- <input 
+    type="text"
+    #opponent
+  > -->
+  <mat-form-field>
+    <mat-label>
+        Enter new Opponent
+    </mat-label>
+    <!-- # = reference variable or ref-oppoent = ref var
+        how else could you get user input?
+    -->
+    <input 
+      matInput placeholder="Ex. Jim Davis" 
+      
+      [(ngModel)]="nameInTextInput"
+    >
+  </mat-form-field>
+  
+    <button 
+      mat-raised-button color="primary"
+      (click)="addOpponent(); clearInputText()"
+      class="newOpponentButton"
+    >
+      Add Opponent
+    </button>
 </div> 
 
 <button
-  mat-raised-button color="warn"
-  class="goToStats"
+mat-raised-button color="warn"
+class="goToStats"
 >
-  Game Stats
+Game Stats
 </button>
 </mat-card>
 </div>
