@@ -1,22 +1,29 @@
-<h1>CHECKERS OPPONENTS</h1>
 <div class="container">
+<mat-card
+  class="card"
+>
+<h2>CHOOSE OPPONENT</h2>
 <div 
   *ngFor="let opponent of opponents"
-  class="form-check"
+  class="form-check chooseOpponent"
 >
-  <input 
+
+  <!-- <input 
     form-check-input
     type="checkbox"
   >
+  
   <label
     form-check-label
   >
     {{ opponent.name }}
   
-</label>
+</label> -->
 
     <!-- NEED TO FIND SOLUTION TO SEND BUTTON VALUE/NAME ATTRIBUTE WHEN BUTTON CLICKED -->
     <button
+      mat-raised-button
+      class="opponentNameButton"
     >
       {{ opponent.name }}
     
@@ -26,20 +33,42 @@
 
 <br><br>
 
-<div>
+<div
+  class="opponentInput"
+>
   <!-- Get the name from the input -->
-  <input 
+  <!-- <input 
       type="text"
       #opponent
-    >
+    > -->
+    <mat-form-field>
+      <mat-label>
+          Enter new Opponent
+      </mat-label>
+      <input 
+        matInput placeholder="Ex. Jim Davis" 
+        #opponent
+        [(ngModel)]="addedOpponentName"
+      >
+    </mat-form-field>
      <!-- SEND THE INPUT TO ADD OPPONENT METHOD AND SET VARIABLE OF NEW OPPONENT TO  -->
          <!-- USE ON SECOND SCREEN -->
+    
      <button 
         mat-raised-button color="primary"
-        (click)="addOpponent(opponent.value)"
+        (click)="addOpponent(opponent.value); clearInputText()"
+        class="newOpponentButton"
       >
         Add Opponent
       </button>
 </div> 
+
+<button
+  mat-raised-button color="warn"
+  class="goToStats"
+>
+  Game Stats
+</button>
+</mat-card>
 </div>
 <!-- COULD USE [(NGMODEL)] TO GET VALUE OF VARIABLE SET        -->

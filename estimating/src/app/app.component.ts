@@ -12,7 +12,9 @@ export class AppComponent {
 
   opponents: Opponents[] = [];
 
-  name = "";
+  opponentName = "";
+
+  addedOpponentName = "";
 
   constructor(private sharedDataSvc: SharedDataService) {}
 
@@ -38,8 +40,6 @@ export class AppComponent {
   }
 
   addOpponent(opponentToAdd: string) {
-    //TROUBLESHOOTING
-    //console.log(opponentToAdd);
 
     const newOpponent = {
       name: opponentToAdd
@@ -49,10 +49,13 @@ export class AppComponent {
       ...this.opponents,
       newOpponent
     ];
+  }
 
-    //TROUBLESHOOTING
-    //console.log("Method Executed Successfully!!!");
+  clearInputText() {
+    this.addedOpponentName = ' ';
+  }
 
-    //this.getOpponents;
+  setOpponentName(opponentName: string) {
+    this.opponentName = opponentName;
   }
 }
