@@ -8,23 +8,20 @@
   CHOOSE OPPONENT
 </h2>
 <div 
-  *ngFor="let opponent of opponents"
   class="form-check chooseOpponent"
->
-
-<input
-  form-check-input
-  type="checkbox"
-  [(ngModel)]="opponent.isChecked"
 >
 
 <label
   form-check-label
+  *ngFor="let opponent of opponents"
 >
-  {{ opponent.name }}
-
+  {{opponent.name}}
+  <input
+    form-check-input
+    type="checkbox"
+    [(ngModel)]="opponent.selected"
+  >
 </label>
-
   <!-- NEED TO FIND SOLUTION TO SEND BUTTON VALUE/NAME ATTRIBUTE WHEN BUTTON CLICKED -->
   <!-- <button
     mat-raised-button
