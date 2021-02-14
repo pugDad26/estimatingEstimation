@@ -12,9 +12,10 @@
   class="form-check chooseOpponent"
 >
 
-<input 
+<input
   form-check-input
   type="checkbox"
+  [(ngModel)]="opponent.isChecked"
 >
 
 <label
@@ -71,6 +72,7 @@
   mat-raised-button color="warn"
   class="goToStats"
   routerLink="/app-foo"
+  (click)="setOpponentChosen()"
 >
   Game Stats
 </button>

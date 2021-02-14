@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
 export interface Opponents {
-  name: string;
+  name: string,
+  isChecked: boolean
 }
 
 export interface Games {

@@ -10,9 +10,13 @@ import { Opponents } from './shared-data.service';
 export class AppComponent {
   title = 'estimating';
 
-  opponents: Opponents[] = [];
+  opponentChosen = "";
+
+  opponent = "";
 
   nameInTextInput = "";
+
+  opponents: Opponents[] = [];
 
   constructor(private sharedDataSvc: SharedDataService) {}
 
@@ -25,10 +29,12 @@ export class AppComponent {
 
     this.opponents = [
       {
-        name: 'Sherman'
+        name: 'Sherman',
+        isChecked: false
       },
       {
-        name: 'Tina'
+        name: 'Tina',
+        isChecked: false
       }
     ];
 
@@ -40,7 +46,8 @@ export class AppComponent {
   addOpponent() {
 
     const newOpponent = {
-      name: this.nameInTextInput
+      name: this.nameInTextInput,
+      isChecked: false
     };
 
     this.opponents = [
@@ -51,5 +58,10 @@ export class AppComponent {
 
   clearInputText() {
     this.nameInTextInput = ' ';
+  }
+
+  setOpponentChosen() {
+    this.opponentChosen = this.opponent;
+    console.log(this.opponentChosen);
   }
 }
