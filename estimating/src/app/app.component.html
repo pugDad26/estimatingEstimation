@@ -9,28 +9,33 @@
 </h2>
 <div 
   class="form-check chooseOpponent"
+  *ngFor="let opponent of opponents"
 >
 
 <label
   form-check-label
-  *ngFor="let opponent of opponents"
 >
   {{opponent.name}}
   <input
     form-check-input
+    #foeChosen
+    name="{{opponent.name}}"
     type="checkbox"
-    [(ngModel)]="opponent.selected"
+    [checked]="foe"
+    (change)="setOpponentChosen(foeChosen.name)"
   >
 </label>
   <!-- NEED TO FIND SOLUTION TO SEND BUTTON VALUE/NAME ATTRIBUTE WHEN BUTTON CLICKED -->
   <!-- <button
+    #opponent
+    name="opponent.name"
     mat-raised-button
     class="opponentNameButton"
+    (click)="setOpponentChosen(opponent)"
   >
     {{ opponent.name }}
   
   </button> -->
-
 </div>
 
 <br><br>
@@ -69,7 +74,6 @@
   mat-raised-button color="warn"
   class="goToStats"
   routerLink="/app-foo"
-  (click)="setOpponentChosen()"
 >
   Game Stats
 </button>

@@ -12,8 +12,6 @@ export class AppComponent {
 
   opponentChosen = "";
 
-  opponent = "";
-
   nameInTextInput = "";
 
   opponents: Opponents[] = [];
@@ -60,8 +58,8 @@ export class AppComponent {
     this.nameInTextInput = ' ';
   }
 
-  setOpponentChosen() {
-    this.opponentChosen = this.opponent;
+  setOpponentChosen(foeChosen:string) {
+    this.opponentChosen = foeChosen;
     console.log(this.opponentChosen);
   }
 }
