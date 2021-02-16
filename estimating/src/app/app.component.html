@@ -5,37 +5,29 @@
   class="card"
 >
 <h2>
-  CHOOSE OPPONENT
+  CHOOSE YOUR OPPONENT
 </h2>
 <div 
   class="form-check chooseOpponent"
-  *ngFor="let opponent of opponents"
 >
 
-<label
-  form-check-label
+<!-- Template Variable #checker Opponents -->
+<mat-selection-list 
+  #checkerOpponents 
+  [multiple]="false"
 >
-  {{opponent.name}}
-  <input
-    form-check-input
-    #foeChosen
-    name="{{opponent.name}}"
-    type="checkbox"
-    [checked]="foe"
-    (change)="setOpponentChosen(foeChosen.name)"
+  <mat-list-option 
+    *ngFor="let opponent of opponents" 
+    [value]="opponent.name"
+    (click)="setOpponentChosen(opponent.name)"
   >
-</label>
-  <!-- NEED TO FIND SOLUTION TO SEND BUTTON VALUE/NAME ATTRIBUTE WHEN BUTTON CLICKED -->
-  <!-- <button
-    #opponent
-    name="opponent.name"
-    mat-raised-button
-    class="opponentNameButton"
-    (click)="setOpponentChosen(opponent)"
-  >
-    {{ opponent.name }}
-  
-  </button> -->
+    {{opponent.name}}
+  </mat-list-option>
+</mat-selection-list>
+
+<p>
+  Option selected: {{checkerOpponents.selectedOptions.selected[0]?.value}}
+</p>
 </div>
 
 <br><br>
@@ -43,11 +35,7 @@
 <div
   class="opponentInput"
 >
-<!-- Get the name from the input -->
-<!-- <input 
-    type="text"
-    #opponent
-  > -->
+
   <mat-form-field>
     <mat-label>
         Enter new Opponent
